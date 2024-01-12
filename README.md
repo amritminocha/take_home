@@ -222,3 +222,6 @@ Appointment: Represents scheduled appointments with doctors.
 
 ## Database
 This application uses SQLite. On each application start, it initializes the database and populates it with some initial doctor data.
+
+For better DB assistance, I used the software Beekeeper Studio
+Downloading link: https://github.com/beekeeper-studio/beekeeper-studio/releases/tag/v4.0.3
