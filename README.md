@@ -23,18 +23,20 @@ By default, the application initializes the database with two doctors: Strange a
 
 # Adding More Doctors
 To add more doctors to the database, you can use the following Python code snippet and add it in app.py:
-
+```
 if not Doctor.query.filter_by(name="New Doctor Name").first():
             new_doctor = Doctor(name="New Doctor Name")
             db.session.add(new_doctor)
-
+```
 
 ## API Endpoints
 
 # Update Doctor Schedule
 
 Endpoint: /update_doctor_schedule
+
 Method: POST
+
 Description: Updates the availability schedule for a specific doctor.
 
 Payload Example:
@@ -81,7 +83,9 @@ curl --location 'http://localhost:8000/update_doctor_schedule' \
 # Create Appointment
 
 Endpoint: /create_appointment
+
 Method: POST
+
 Description: Books an appointment with a specific doctor, checking for any overlapping appointments.
 
 Payload Example:
@@ -102,8 +106,11 @@ curl --location 'http://localhost:8000/create_appointment' \
 
 # Get Appointments
 Endpoint: /get_appointments
+
 Method: GET
+
 Description: Retrieves a list of appointments for a specified doctor within a given time range.
+
 Query Parameters: doctor, start_time, end_time
 
 Curl Request:
@@ -114,8 +121,11 @@ curl --location 'http://localhost:8000/get_appointments?doctor=Who&start_time=20
 # Get Next Available Appointment
 
 Endpoint: /get_next_available_appointment
+
 Method: GET
+
 Description: Finds the next available appointment slot for a specified doctor.
+
 Query Parameters: doctor, start_time, required_duration
 
 Curl Request:
@@ -126,7 +136,9 @@ curl --location 'http://localhost:8000/get_next_available_appointment?doctor=Who
 
 ## Models
 Doctor: Manages doctors and their relationships with appointments and availability.
+
 DoctorAvailability: Handles the availability of each doctor.
+
 Appointment: Represents scheduled appointments with doctors.
 
 ## Database
