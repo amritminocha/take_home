@@ -80,6 +80,85 @@ curl --location 'http://localhost:8000/update_doctor_schedule' \
 }
 '
 ```
+
+
+If we want to set (9 AM to 5 PM, M-F for Strange, 8 AM to 4 PM M-F for Who),
+run these two curls:
+
+Curl1 for doctor Strange:
+```
+curl --location 'http://localhost:8000/update_doctor_schedule' \
+--header 'Content-Type: application/json' \
+--data '{
+    "doctor": "Strange",
+    "schedules": [
+        {
+            "day": "Monday",
+            "start_time": "09:00:00",
+            "end_time": "17:00:00"
+        },
+        {
+            "day": "Tuesday",
+            "start_time": "09:00:00",
+            "end_time": "17:00:00"
+        },
+        {
+            "day": "Wednesday",
+            "start_time": "09:00:00",
+            "end_time": "17:00:00"
+        },
+        {
+            "day": "Thursday",
+            "start_time": "09:00:00",
+            "end_time": "17:00:00"
+        },
+        {
+            "day": "Friday",
+            "start_time": "09:00:00",
+            "end_time": "17:00:00"
+        }
+    ]
+}
+'
+```
+
+Curl2 for doctor Who:
+```
+curl --location 'http://localhost:8000/update_doctor_schedule' \
+--header 'Content-Type: application/json' \
+--data '{
+    "doctor": "Who",
+    "schedules": [
+        {
+            "day": "Monday",
+            "start_time": "08:00:00",
+            "end_time": "16:00:00"
+        },
+        {
+            "day": "Tuesday",
+            "start_time": "08:00:00",
+            "end_time": "16:00:00"
+        },
+        {
+            "day": "Wednesday",
+            "start_time": "08:00:00",
+            "end_time": "16:00:00"
+        },
+        {
+            "day": "Thursday",
+            "start_time": "08:00:00",
+            "end_time": "16:00:00"
+        },
+        {
+            "day": "Friday",
+            "start_time": "08:00:00",
+            "end_time": "16:00:00"
+        }
+    ]
+}
+'
+```
+
 # Create Appointment
 
 Endpoint: /create_appointment
